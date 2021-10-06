@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.patrimonios.etinties.Bem;
 import com.example.patrimonios.repositories.BemRepository;
+import com.example.patrimonios.services.exception.ResourceNotFound;
 
 @Service
 public class BemService {
@@ -20,8 +21,8 @@ public class BemService {
 	}
 	
 	public Bem findById(Long id) {
-		Optional<Bem> bem = br.findById(id);
-		return bem.get();
+			Optional<Bem> bem = br.findById(id);
+			return bem.get();
 	}
 	
 	public Bem insert(Bem bem) {
